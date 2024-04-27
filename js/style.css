@@ -1,0 +1,218 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ul, ol{
+    list-style: none;
+}
+body{
+    font-family: "Roboto", sans-serif;
+
+}
+.header-top__right{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.header-top__left-link img{
+    width: 50px;
+}
+.container{
+    max-width: 1250px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.header-top__container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header-top{
+    background-color:#33A0FF ;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.search-input {
+    width: 500px;
+    height: 41px;
+    padding: 8px 12px;
+    background-color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+}
+.header-top__user{
+    font-size: 18px;
+    color: #000042;
+}
+.korzinka{
+    width: 40px;
+    color:red;
+}
+.shopping-numbers{
+    font-size: 18px;
+    color: #000042;
+    position: absolute;
+    left: 81%;
+    background-color: red;
+    padding: 0.1px 4px;
+    border-radius: 10px;
+    bottom:92%;
+}
+.header-bottom__left{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.header-bottom__logo-text{
+    color: #fff;
+    font-size: 18px;
+}
+.header-botttom__list{
+    display: flex;
+    align-items: center;
+    gap: 100px;
+}
+a{
+    text-decoration: none;
+}
+.header-bottom__container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+}
+.header-bottom__link{
+    font-size: 24px;
+    color: #f1f1f1;
+}
+.hero{
+    background-image: url(https://exam-fourth-month.netlify.app/img/hero-img.jpg);
+    /* background-attachment: fixed; */
+    /* background-position:center; */
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px;
+    position: relative;
+}
+.hero-title{
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    font-size: 64px;
+    color: #fff;
+}
+.general__list{
+    display: flex;
+    justify-content:space-evenly;
+}
+.general__title{
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    font-size: 35px;
+    color: #262626;
+}
+.general__item{
+    color:#33b3ff;
+    font-size: 22px;
+}
+.cart{
+    border: 2px solid #000000;
+    border-radius: 10px;
+    width: 300px;
+    height: 500px;
+    padding: 20px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    
+}
+.cart-img{
+    width: 204px;
+    height: 240px;
+}
+.box{
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: center; */
+    margin-top: 30px;
+    /* height: 500px; */
+    gap: 10px;
+}
+.cart-title{
+    font-size: 20px;
+    color: #223263;
+}
+.price{
+    color: #40BFFF;
+    font-size: 20px;
+    font-weight: 700;
+    /* margin-right: 15px; */
+}
+.price del{
+    font-size: 15px;
+    color: #9098B1;
+    font-size: 18px;
+    margin-right: 10px;
+    margin-left: 15px;
+}
+.price span{
+    font-size: 15px;
+    color: #FB87B6;
+    font-size: 20px;
+    font-weight: 700;
+}
+.rating img{
+    width: 30px;
+}
+.cart-inner-img{
+    width: 25px;
+    margin-right: 30px;
+}
+.cart-inner-img{
+    margin-left: 20px;
+}
+.free-list{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+.free-item{
+    font-size: 27px;
+    color: #22262A;
+}
+.footer-block{
+    display: flex;
+    justify-content: space-between;
+    /* gap: 50px; */
+}
+.footer-list{
+    display: flex;
+    gap: 60px;
+    justify-content: space-between;
+}
+.main-footer{
+    background-color:#33A0FF;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-top: 80px;
+}
+.footer-about-text{
+    width: 200px;
+}
+.footer-adress{
+    width: 200px;
+}
+.free{
+    margin-top: 50px;
+}
