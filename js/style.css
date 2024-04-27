@@ -216,3 +216,20 @@ a{
 .free{
     margin-top: 50px;
 }
+.loadBtn{
+   font-size: 24px;
+   font-weight: 700;
+    color: #33A0FF;
+    text-decoration: underline;
+    width: 200px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    cursor: pointer;
+    user-select: none;
+}
+.loadBtn:hover{
+  transform: scale(1.1);
+   transition:0.2s;
+}
