@@ -11,14 +11,7 @@ result2.forEach((item) => {
   korzinkaBox.innerHTML += `
 
 <div class="container">
-<div class="productHeader">
-    <h1>Products</h1>
-    <div class="UnitPrice">
-        <p>Unit Price</p>
-        <p>QTY</p>
-        <p>Price</p>
-    </div>
-</div>
+
 <div class="productsBox">
     <div class="imgBox">
         <img src="images/deleteImg.png" class="deleteIcon" alt="">
@@ -27,7 +20,7 @@ result2.forEach((item) => {
     <p>${title}</p>
     <div class="priceBox">
         <div class="Pprice">
-            <p class="num2Price">125</p>
+            <p class="${price}">125</p>
             <p class="dollar">$</p>
         </div>
         <div class="Pprice numberProduct">

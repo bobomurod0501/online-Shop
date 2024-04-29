@@ -213,17 +213,20 @@ const updateUI = (data) => {
     document.addEventListener("click", (e) => {
       if (e.target.id == `${id}`) {
         const result = data[`${id - 1}`];
-
-        newArray.push(result);
-        // console.log(localStorage.getItem("object")[`${id - 1}`]);
-
-        // console.log(newArray)
-        localStorage.setItem("object", JSON.stringify(newArray));
+        // console.log(result)
+            
+            newArray.push(result);
+         
       }
-    });
-  });
-};
 
+      // console.log(localStorage.getItem("object")[`${id - 1}`]);
+
+      // console.log(newArray)
+      localStorage.setItem("object", JSON.stringify(newArray));
+    });
+  })
+};
+console.log(JSON.parse(localStorage.getItem("object"))[0]);
 // document.addEventListener('click', (e) => {
 //   // e.preventDefault()
 //   if (e.target.classList[1] === 'korzinka_btn') {
