@@ -233,3 +233,18 @@ a{
   transform: scale(1.1);
    transition:0.2s;
 }
+.general__link{
+    cursor: pointer;
+    user-select: none;
+}
+.active-link{
+    text-decoration: underline;
+    color:red;
+}
+.hidden{
+ display: none;
+}
+.productsBox{
+    display: flex;
+    justify-content: space-between;
+}
