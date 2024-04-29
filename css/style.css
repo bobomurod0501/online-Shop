@@ -15,6 +15,7 @@ body{
 
 }
 .header-top__right{
+    position: relative;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -59,11 +60,12 @@ body{
     font-size: 18px;
     color: #000042;
     position: absolute;
-    left: 81%;
+    left: 92%;
     background-color: red;
-    padding: 0.1px 4px;
-    border-radius: 10px;
-    bottom:92%;
+    padding: 0.2px 7px;
+    border-radius: 15px;
+    top:-35%;
+    color: white;
 }
 .header-bottom__left{
     display: flex;
@@ -244,7 +246,91 @@ a{
 .hidden{
  display: none;
 }
+.deleteIcon{
+    width: 25px;
+}
 .productsBox{
     display: flex;
+    align-items: center;
     justify-content: space-between;
+    border-top: 3px solid #E8E8E8;
+    padding-top:10px;
+    padding-bottom:10px;
+    margin-top: 20px;
+}
+.productHeader{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.imgBox{
+    display: flex;
+    align-items: center;
+    gap:80px;
+}
+.priceBox{
+    display: flex;
+    align-items: center;
+    gap:170px;
+}
+.Pprice{
+    display: flex;
+    align-items: center;
+    gap:10px;
+}
+.UnitPrice{
+    display: flex;
+    gap: 200px;
+}
+.UnitPrice p{
+    font-size: 20px;
+    color: #22262A;
+    font-weight: 700;
+}
+.numberProduct{
+    background-color:#f6f7f8;
+    padding: 10px 20px;
+    border-radius: 5px;
+    gap: 10px;
+}
+.minus{
+    color: #33A0FF;
+    font-size: 30px;
+    font-weight: 1000;
+    cursor: pointer;
+    user-select: none;
+}
+.pilus{
+    color: #33A0FF;
+    font-size: 20px;
+    font-weight: 1000;
+    cursor: pointer;
+    user-select: none;
+}
+.number{
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    user-select: none;
+}
+.num2Price{
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    user-select: none;
+}
+.numPrice{
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    user-select: none;
+}
+.dollar{
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    user-select: none;
+}
+.productImg{
+    width: 80px;
 }

@@ -7,9 +7,11 @@ const getData = async()=>{
  return data
 }
 
-getData().then((data) => {
-    updateUI(data)
-})
-.catch((err) => {
-    console.log(err)
-})
+    getData()
+    .then((data) => {
+        updateUI(data)
+    })
+    .catch((err) => {
+        console.log(err)
+    })
+
