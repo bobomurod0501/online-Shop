@@ -1,26 +1,26 @@
-// const korzinkaBox = document.querySelector('.korzinkaBox')
-
-// const shoppingNumbers = document.querySelector('.shopping-numbers')
 const korzinkaBox = document.querySelector(".korzinkaBox");
-// let value = 0;
+
 const data = localStorage.getItem("object") || [];
-// console.log("fghdtg", data)
+
 const result2 = JSON.parse(data);
+console.log(result2);
 result2.forEach((item) => {
-  const { image, title, price } = item;
-  korzinkaBox.innerHTML += `
+  const { image, title, price, id } = item;
+
+  korzinkaBox.innerHTML += ` 
 
 <div class="container">
 
 <div class="productsBox">
-    <div class="imgBox">
-        <img src="images/deleteImg.png" class="deleteIcon" alt="">
+    <div class="imgBox parent_${id}">
+    <img src="images/deleteImg.png" class="deleteIcon" id="${id}" alt="deleteIcon">
+        
         <img src=${image} class="productImg" alt="productImg">
     </div>
-    <p>${title}</p>
+    <p class="productTitle">${title}</p>
     <div class="priceBox">
         <div class="Pprice">
-            <p class="${price}">125</p>
+            <p class="number1Price">${price}</p>
             <p class="dollar">$</p>
         </div>
         <div class="Pprice numberProduct">
@@ -29,64 +29,80 @@ result2.forEach((item) => {
             <p class="pilus">+</p>
         </div>
         <div class="Pprice ">
-            <p class="numPrice">125</p>
+            <p class="numPrice">${price}</p>
             <p class="dollar">$</p>
         </div>
     </div>
 </div>
 </div>
 
-
-
 `;
+
+  //   const deleteBtn = document.createElement("img");
+  //   deleteBtn.setAttribute("src", "images/deleteImg.png");
+  //   deleteBtn.setAttribute("class", "deleteIcon");
+  //   deleteBtn.setAttribute("alt", "delete Icon");
+  //   const parentItem = document.querySelector(`.parent_${id}`);
+  //   parentItem.addEventListener("click", () => {
+  //     console.log("id", id);
+  //   });
+
+  //   parentItem.prepend(deleteBtn);
+});
+
+const minus = document.querySelectorAll(".minus");
+const number = document.querySelectorAll(".number");
+const pilus = document.querySelectorAll(".pilus");
+const number1Price = document.querySelectorAll(".number1Price");
+const numPrice = document.querySelectorAll(".numPrice");
+const deleteIcon = document.querySelectorAll(".deleteIcon");
+const hidden = document.querySelector(".hidden");
+
+let value = 1;
+minus.forEach((item) => {
+  item.addEventListener("click", () => {
+    // item.textContent = 0
+    value--;
+    if (value >= 0) {
+      Array.from(item.parentElement.children)[1].textContent = value;
+    } else {
+      value = 0;
+        
+      Array.from(item.parentElement.children)[1].textContent = value;
+    }
+  });
+});
+// let value = 0
+pilus.forEach((item) => {
+  item.addEventListener("click", () => {
+    value++;
+    if (value >= 0) {
+      Array.from(item.parentElement.children)[1].textContent = value;
+    } else {
+      value = 0;
+      console.log(
+        (Array.from(item.parentElement.children)[1].textContent = value)
+      );
+    }
+  });
+});
+deleteIcon.forEach((item) => {
+  item.addEventListener("click", () => {
+    const id = item.getAttribute("id");
+    console.log(id);
+    item.parentElement.parentElement.remove();
+    // localStorage.clear('object')
+    // console.log(data)
+    localStorage.setItem('object',JSON.stringify(result2.filter((el) => el.id != id)))
+  });
 });
 
 
-console.log(korzinkaBox)
 
-const minus = document.querySelector('.minus')
-const number = document.querySelector('.number')
-const pilus = document.querySelector('.pilus')
 
-let value = 0
-minus.addEventListener('click', () => {
-        value--
-        if(value >= 0){
-            number.textContent = value
-        }else{
-            number.textContent = 0
-        }
-       
-})
 
-/* <div class="container">
-<div class="productHeader">
-    <h1>Products</h1>
-    <div class="UnitPrice">
-        <p>Unit Price</p>
-        <p>QTY</p>
-        <p>Price</p>
-    </div>
-</div>
-<div class="productsBox">
-    <div class="imgBox">
-        <img src="images/deleteImg.png" class="deleteIcon" alt="">
-        <img src="images/deleteImg.png" class="productImg" alt="productImg">
-    </div>
-    <div class="priceBox">
-        <div class="Pprice">
-            <p class="num2Price">125</p>
-            <p class="dollar">$</p>
-        </div>
-        <div class="Pprice numberProduct">
-            <p class="minus">-</p>
-            <p class="number">1</p>
-            <p class="pilus">+</p>
-        </div>
-        <div class="Pprice ">
-            <p class="numPrice">125</p>
-            <p class="dollar">$</p>
-        </div>
-    </div>
-</div>
-</div> */
+
+
+
+
+

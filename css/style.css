@@ -334,3 +334,9 @@ a{
 .productImg{
     width: 80px;
 }
+.productTitle{
+    width: 300px;
+    margin-left: -120px;
+    font-weight: 700;
+    font-size: 20px;
+}
