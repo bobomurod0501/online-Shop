@@ -18,33 +18,28 @@ const mainSection = document.querySelector(".mainSection");
 const general = document.querySelector(".general");
 const free = document.querySelector(".free");
 const products = document.querySelector(".products");
-const headerLastLink = document.querySelector('.shopcard')
-
+const headerLastLink = document.querySelector(".shopcard");
 
 // const korzinkaBox = document.querySelector('.korzinkaBox')
 //  headerSearch['searchInut'].addEventListener('input', () => {
 //   const inutValue = headerSearch['searchInut'].value
 //   console.log(inutValue)
 // })
-headerSearch['text'].addEventListener('input', () => {
-  const inputValue = headerSearch['text'].value.toLowerCase()
+headerSearch["text"].addEventListener("input", () => {
+  const inputValue = headerSearch["text"].value.toLowerCase();
   // console.log(inputValue)
   // productName
-  const productName = document.querySelectorAll('.cart-title')
+  const productName = document.querySelectorAll(".cart-title");
   productName.forEach((item) => {
-    if(item.textContent.toLowerCase().includes(inputValue)){
-      item.parentElement.classList.remove('hidden')
-    }else{
-      item.parentElement.classList.add('hidden')
+    if (item.textContent.toLowerCase().includes(inputValue)) {
+      item.parentElement.classList.remove("hidden");
+    } else {
+      item.parentElement.classList.add("hidden");
     }
-  })
-})
+  });
+});
 
-
-const showProducts = () => {
-
-}
-
+const showProducts = () => {};
 
 const removeActive = () => {
   jewelery.classList.remove("active-link");
@@ -58,13 +53,13 @@ const updateUI = (data) => {
   console.log(data);
 
   // all.addEventListener("click", () => {
-    removeActive();
-    all.classList.add("active-link");
-    box.innerHTML = "";
-    const result = data.slice(0, 8);
-    result.forEach((item) => {
-      const { image, title, price, id } = item;
-      box.innerHTML += `
+  removeActive();
+  all.classList.add("active-link");
+  box.innerHTML = "";
+  const result = data.slice(0, 8);
+  result.forEach((item) => {
+    const { image, title, price, id } = item;
+    box.innerHTML += `
       <div class="cart">
         <div class="cart-img-box">
           <img class="cart-img" src=${image} alt="img">
@@ -82,7 +77,7 @@ const updateUI = (data) => {
         </div>
       </div>
       `;
-    });
+  });
   // });
   all.addEventListener("click", () => {
     removeActive();
@@ -255,37 +250,32 @@ const updateUI = (data) => {
            `;
     });
   });
-  
+
   const newArray = JSON.parse(localStorage.getItem("object")) || [];
-  let value = newArray.length
-  shoppingNumbers.textContent = newArray.length
+  let value = newArray.length;
+  shoppingNumbers.textContent = newArray.length;
   data.forEach((item) => {
     const { id } = item;
 
     document.addEventListener("click", (e) => {
       if (e.target.id == `${id}`) {
         const result = data[`${id - 1}`];
-        const isHaveLocalStorage = newArray.find((el) => el.id === result.id)
-        console.log(isHaveLocalStorage)
-          if(!isHaveLocalStorage){
-            newArray.push(result);
-            value++
-            shoppingNumbers.textContent = value
-          }else{
-            alert('Bu maxsulotni oldin kiritgansiz')
-          }
-        
-        
-       
+        const isHaveLocalStorage = newArray.find((el) => el.id === result.id);
+        console.log(isHaveLocalStorage);
+        if (!isHaveLocalStorage) {
+          newArray.push(result);
+          value++;
+          shoppingNumbers.textContent = value;
+        } else {
+          alert("Bu maxsulotni oldin kiritgansiz");
+        }
       }
 
       // console.log(localStorage.getItem("object")[`${id - 1}`]);
 
-      
       localStorage.setItem("object", JSON.stringify(newArray));
     });
   });
 };
 
 // shoppingNumbers.textContent = newArray.length
-

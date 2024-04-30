@@ -5,7 +5,7 @@ const data = localStorage.getItem("object") || [];
 const result2 = JSON.parse(data);
 console.log(result2);
 result2.forEach((item) => {
-  const { image, title, price, id } = item;
+  const { image, title, price, id, rating } = item;
 
   korzinkaBox.innerHTML += ` 
 
@@ -58,54 +58,16 @@ const numPrice = document.querySelectorAll(".numPrice");
 const deleteIcon = document.querySelectorAll(".deleteIcon");
 const hidden = document.querySelector(".hidden");
 
-let value = 1;
-minus.forEach((item) => {
-  item.addEventListener("click", () => {
-    // item.textContent = 0
-    value--;
-    if (value >= 0) {
-      Array.from(item.parentElement.children)[1].textContent = value;
-    } else {
-      value = 0;
-        
-      Array.from(item.parentElement.children)[1].textContent = value;
-    }
-  });
-});
-// let value = 0
-pilus.forEach((item) => {
-  item.addEventListener("click", () => {
-    value++;
-    if (value >= 0) {
-      Array.from(item.parentElement.children)[1].textContent = value;
-    } else {
-      value = 0;
-      console.log(
-        (Array.from(item.parentElement.children)[1].textContent = value)
-      );
-    }
-  });
-});
 deleteIcon.forEach((item) => {
   item.addEventListener("click", () => {
     const id = item.getAttribute("id");
     console.log(id);
-    item.parentElement.parentElement.remove();
+    // item.parentElement.parentElement.remove();
     // localStorage.clear('object')
     // console.log(data)
-    localStorage.setItem('object',JSON.stringify(result2.filter((el) => el.id != id)))
+    localStorage.setItem(
+      "object",
+      JSON.stringify(result2.filter((el) => el.id != id))
+    );
   });
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
