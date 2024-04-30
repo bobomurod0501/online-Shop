@@ -41,6 +41,24 @@ result2.forEach((item) => {
 `;
 });
 
+
+console.log(korzinkaBox)
+
+const minus = document.querySelector('.minus')
+const number = document.querySelector('.number')
+const pilus = document.querySelector('.pilus')
+
+let value = 0
+minus.addEventListener('click', () => {
+        value--
+        if(value >= 0){
+            number.textContent = value
+        }else{
+            number.textContent = 0
+        }
+       
+})
+
 /* <div class="container">
 <div class="productHeader">
     <h1>Products</h1>
