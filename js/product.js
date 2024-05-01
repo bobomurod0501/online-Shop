@@ -1,3 +1,5 @@
+// const { format } = require("path");
+
 const korzinkaBox = document.querySelector(".korzinkaBox");
 
 const data = localStorage.getItem("object") || [];
@@ -24,7 +26,7 @@ result2.forEach((item) => {
             <p class="dollar">$</p>
         </div>
         <div class="Pprice numberProduct">
-            <p class="minus">-</p>
+            <p class="minus" id=${id}>-</p>
             <p class="number">1</p>
             <p class="pilus">+</p>
         </div>
@@ -62,12 +64,30 @@ deleteIcon.forEach((item) => {
   item.addEventListener("click", () => {
     const id = item.getAttribute("id");
     console.log(id);
-    // item.parentElement.parentElement.remove();
+    item.parentElement.parentElement.remove();
     // localStorage.clear('object')
     // console.log(data)
     localStorage.setItem(
       "object",
       JSON.stringify(result2.filter((el) => el.id != id))
+      
     );
+    // console.log(el)
+    // console.log(localStorage.getItem('object'))
   });
 });
+
+// const arr = []
+// minus.forEach((item) => {
+//   const minusId = item.getAttribute('id')
+//   minusId.addEventListener('click', () => {
+//     console.log(minusId)
+//   })
+    
+  
+// })
+
+
+
+  
+
