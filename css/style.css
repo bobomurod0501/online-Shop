@@ -340,3 +340,43 @@ a{
     font-weight: 700;
     font-size: 20px;
 }
+.totalPrice{
+    display: flex;
+    gap: 5px;
+}
+.totalItem{
+    font-size: 24px;
+    font-weight: 700;
+}
+.totalPriceBox{
+    display: flex;
+    border: 2px solid #D4D4D4;
+    padding: 30px;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    width: 250px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 50px;
+}
+.buyNow{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 50px;
+    background-color: #0ce20c;
+    border-radius: 10px;
+    color: white;
+    font-weight: 700;
+    letter-spacing: 2px;
+    padding: 10px;
+    margin-top: 20px;
+}
+.buyNow:hover{
+    background-color: #069306;
+    transition: 0.5s;
+}

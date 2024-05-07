@@ -58,17 +58,20 @@ const updateUI = (data) => {
   box.innerHTML = "";
   const result = data.slice(0, 8);
   result.forEach((item) => {
-    const { image, title, price, id } = item;
-    box.innerHTML += `
+    const { image, title, price, id, rating} = item;
+    const {rate} = rating
+      box.innerHTML += `
       <div class="cart">
         <div class="cart-img-box">
           <img class="cart-img" src=${image} alt="img">
         </div>
         <h3 class="cart-title">${title}</h3>
         <p class="rating">
-            <img src="https://exam-fourth-month.netlify.app/img/star.svg" alt="img"><img src="https://exam-fourth-month.netlify.app/img/star.svg" alt="img"><img src="https://exam-fourth-month.netlify.app/img/star.svg" alt="img"><img src="https://exam-fourth-month.netlify.app/img/star.svg" alt="img"><img src="https://exam-fourth-month.netlify.app/img/star.svg" alt="img">
+            <img src="https://exam-fourth-month.netlify.app/img/star.svg" alt="img"><img src="https://exam-fourth-month.netlify.app/img/star.svg" alt="img"><img src="https://exam-fourth-month.netlify.app/img/star.svg" alt="img"><img src="https://exam-fourth-month.netlify.app/img/star.svg" alt="img"><img src="https://exam-fourth-month.netlify.app/img/unset-star.svg" alt="img">
         </p>
-        <p class="price">${price}$ <del>109.95$</del> <span>24% Off</span></p>
+        <p class="price">${price}$ <del>${(price + (price * 24) / 100).toFixed(
+      2
+    )}$</del> <span>24% Off</span></p>
         <div class="cart-box">
           <img class="cart-inner-img" 
           src="https://exam-fourth-month.netlify.app/img/hearts.svg" alt="img">
@@ -77,6 +80,11 @@ const updateUI = (data) => {
         </div>
       </div>
       `;
+    // }
+    // if(rate < 2){
+    //   console.log
+    // }
+    
   });
   // });
   all.addEventListener("click", () => {
@@ -85,7 +93,7 @@ const updateUI = (data) => {
     box.innerHTML = "";
     const result = data.slice(0, 8);
     result.forEach((item) => {
-      const { image, title, price, id } = item;
+      const { image, title, price, id, rating } = item;
       box.innerHTML += `
       <div class="cart">
         <div class="cart-img-box">
@@ -93,9 +101,11 @@ const updateUI = (data) => {
         </div>
         <h3 class="cart-title">${title}</h3>
         <p class="rating">
-            <img src="https://exam-fourth-month.netlify.app/img/star.svg" alt="img"><img src="https://exam-fourth-month.netlify.app/img/star.svg" alt="img"><img src="https://exam-fourth-month.netlify.app/img/star.svg" alt="img"><img src="https://exam-fourth-month.netlify.app/img/star.svg" alt="img"><img src="https://exam-fourth-month.netlify.app/img/star.svg" alt="img">
+            <img src="https://exam-fourth-month.netlify.app/img/star.svg" alt="img"><img src="https://exam-fourth-month.netlify.app/img/star.svg" alt="img"><img src="https://exam-fourth-month.netlify.app/img/unset-star.svg" alt="img"><img src="https://exam-fourth-month.netlify.app/img/unset-star.svg" alt="img"><img src="https://exam-fourth-month.netlify.app/img/unset-star.svg" alt="img">
         </p>
-        <p class="price">${price}$ <del>109.95$</del> <span>24% Off</span></p>
+        <p class="price">${price}$ <del>${(price + (price * 24) / 100).toFixed(
+        2
+      )}$</del> <span>24% Off</span></p>
         <div class="cart-box">
           <img class="cart-inner-img" 
           src="https://exam-fourth-month.netlify.app/img/hearts.svg" alt="img">
@@ -112,7 +122,7 @@ const updateUI = (data) => {
     box.innerHTML = "";
     const result = data.slice(4, 8);
     result.forEach((item) => {
-      const { image, title, price, id } = item;
+      const { image, title, price, id, rating } = item;
       box.innerHTML += `
                 
                 <div class="cart">
@@ -121,9 +131,12 @@ const updateUI = (data) => {
                 </div>
                 <h3 class="cart-title">${title}</h3>
                 <p class="rating">
-                    <img src="https://exam-fourth-month.netlify.app/img/star.svg" alt="img"><img src="https://exam-fourth-month.netlify.app/img/star.svg" alt="img"><img src="https://exam-fourth-month.netlify.app/img/star.svg" alt="img"><img src="https://exam-fourth-month.netlify.app/img/star.svg" alt="img"><img src="https://exam-fourth-month.netlify.app/img/star.svg" alt="img">
+                    <img src="https://exam-fourth-month.netlify.app/img/star.svg" alt="img"><img src="https://exam-fourth-month.netlify.app/img/star.svg" alt="img"><img src="https://exam-fourth-month.netlify.app/img/star.svg" alt="img"><img src="https://exam-fourth-month.netlify.app/img/star.svg" alt="img"><img src="https://exam-fourth-month.netlify.app/img/unset-star.svg" alt="img">
                 </p>
-                <p class="price">${price}$ <del>109.95$</del> <span>24% Off</span></p>
+                <p class="price">${price}$ <del>${(
+        price +
+        (price * 24) / 100
+      ).toFixed(2)}$</del> <span>24% Off</span></p>
                 <div class="cart-box">
                   <img class="cart-inner-img" 
                   src="https://exam-fourth-month.netlify.app/img/hearts.svg" alt="img">
@@ -142,7 +155,7 @@ const updateUI = (data) => {
     console.log(result);
     result.forEach((item) => {
       // if(item.category === 'jewelery'){
-      const { image, title, price, id } = item;
+      const { image, title, price, id, rating } = item;
       box.innerHTML += `
                 
                 <div class="cart">
@@ -153,7 +166,10 @@ const updateUI = (data) => {
                 <p class="rating">
                     <img src="https://exam-fourth-month.netlify.app/img/star.svg" alt="img"><img src="https://exam-fourth-month.netlify.app/img/star.svg" alt="img"><img src="https://exam-fourth-month.netlify.app/img/star.svg" alt="img"><img src="https://exam-fourth-month.netlify.app/img/star.svg" alt="img"><img src="https://exam-fourth-month.netlify.app/img/star.svg" alt="img">
                 </p>
-                <p class="price">${price}$ <del>109.95$</del> <span>24% Off</span></p>
+                <p class="price">${price}$ <del>${(
+        price +
+        (price * 24) / 100
+      ).toFixed(2)}$</del> <span>24% Off</span></p>
                 <div class="cart-box">
                   <img class="cart-inner-img" 
                   src="https://exam-fourth-month.netlify.app/img/hearts.svg" alt="img">
@@ -173,7 +189,7 @@ const updateUI = (data) => {
     console.log(result);
     result.forEach((item) => {
       // if(item.category === 'jewelery'){
-      const { image, title, price, id } = item;
+      const { image, title, price, id, rating } = item;
       box.innerHTML += `
                 
                 <div class="cart">
@@ -182,9 +198,12 @@ const updateUI = (data) => {
                 </div>
                 <h3 class="cart-title">${title}</h3>
                 <p class="rating">
-                    <img src="https://exam-fourth-month.netlify.app/img/star.svg" alt="img"><img src="https://exam-fourth-month.netlify.app/img/star.svg" alt="img"><img src="https://exam-fourth-month.netlify.app/img/star.svg" alt="img"><img src="https://exam-fourth-month.netlify.app/img/star.svg" alt="img"><img src="https://exam-fourth-month.netlify.app/img/star.svg" alt="img">
+                    <img src="https://exam-fourth-month.netlify.app/img/star.svg" alt="img"><img src="https://exam-fourth-month.netlify.app/img/star.svg" alt="img"><img src="https://exam-fourth-month.netlify.app/img/star.svg" alt="img"><img src="https://exam-fourth-month.netlify.app/img/unset-star.svg" alt="img"><img src="https://exam-fourth-month.netlify.app/img/unset-star.svg" alt="img">
                 </p>
-                <p class="price">${price}$ <del>109.95$</del> <span>24% Off</span></p>
+                <p class="price">${price}$ <del>${(
+        price +
+        (price * 24) / 100
+      ).toFixed(2)}$</del> <span>24% Off</span></p>
                 <div class="cart-box">
                   <img class="cart-inner-img" 
                   src="https://exam-fourth-month.netlify.app/img/hearts.svg" alt="img">
@@ -203,7 +222,7 @@ const updateUI = (data) => {
     console.log(result);
     result.forEach((item) => {
       // if(item.category === 'jewelery'){
-      const { image, title, price, id } = item;
+      const { image, title, price, id, rating } = item;
       box.innerHTML += `
                 
                 <div class="cart">
@@ -212,9 +231,12 @@ const updateUI = (data) => {
                 </div>
                 <h3 class="cart-title">${title}</h3>
                 <p class="rating">
-                    <img src="https://exam-fourth-month.netlify.app/img/star.svg" alt="img"><img src="https://exam-fourth-month.netlify.app/img/star.svg" alt="img"><img src="https://exam-fourth-month.netlify.app/img/star.svg" alt="img"><img src="https://exam-fourth-month.netlify.app/img/star.svg" alt="img"><img src="https://exam-fourth-month.netlify.app/img/star.svg" alt="img">
+                    <img src="https://exam-fourth-month.netlify.app/img/star.svg" alt="img"><img src="https://exam-fourth-month.netlify.app/img/star.svg" alt="img"><img src="https://exam-fourth-month.netlify.app/img/star.svg" alt="img"><img src="https://exam-fourth-month.netlify.app/img/star.svg" alt="img"><img src="https://exam-fourth-month.netlify.app/img/unset-star.svg" alt="img">
                 </p>
-                <p class="price">${price}$ <del>109.95$</del> <span>24% Off</span></p>
+                <p class="price">${price}$ <del>${(
+        price +
+        (price * 24) / 100
+      ).toFixed(2)}$</del> <span>24% Off</span></p>
                 <div class="cart-box">
                   <img class="cart-inner-img" 
                   src="https://exam-fourth-month.netlify.app/img/hearts.svg" alt="img">
@@ -222,14 +244,14 @@ const updateUI = (data) => {
                   src="https://exam-fourth-month.netlify.app/img/korzinka_2.svg" alt="img">
                 </div>
               </div>
-                `;
+         `;
     });
   });
   loadBtn.addEventListener("click", () => {
     removeActive();
     box.innerHTML = "";
     data.forEach((item) => {
-      const { image, title, price, id } = item;
+      const { image, title, price, id, rating} = item;
       box.innerHTML += `
       <div class="cart">
                 <div class="cart-img-box">
@@ -239,7 +261,10 @@ const updateUI = (data) => {
                 <p class="rating">
                     <img src="https://exam-fourth-month.netlify.app/img/star.svg" alt="img"><img src="https://exam-fourth-month.netlify.app/img/star.svg" alt="img"><img src="https://exam-fourth-month.netlify.app/img/star.svg" alt="img"><img src="https://exam-fourth-month.netlify.app/img/star.svg" alt="img"><img src="https://exam-fourth-month.netlify.app/img/star.svg" alt="img">
                 </p>
-                <p class="price">${price}$ <del>109.95$</del> <span>24% Off</span></p>
+                <p class="price">${price}$ <del>${(
+        price +
+        (price * 24) / 100
+      ).toFixed(2)}$</del> <span>24% Off</span></p>
                 <div class="cart-box">
                   <img class="cart-inner-img" 
                   src="https://exam-fourth-month.netlify.app/img/hearts.svg" alt="img">

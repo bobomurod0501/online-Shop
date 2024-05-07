@@ -15,7 +15,7 @@ result2.forEach((item) => {
 
 <div class="productsBox">
     <div class="imgBox parent_${id}">
-    <img src="images/deleteImg.png" class="deleteIcon" id="${id}" alt="deleteIcon">
+        <img src="images/deleteImg.png" class="deleteIcon" id="${id}" alt="deleteIcon">
         
         <img src=${image} class="productImg" alt="productImg">
     </div>
@@ -26,7 +26,7 @@ result2.forEach((item) => {
             <p class="dollar">$</p>
         </div>
         <div class="Pprice numberProduct">
-            <p class="minus" id=${id}>-</p>
+            <p class="minus">-</p>
             <p class="number">1</p>
             <p class="pilus">+</p>
         </div>
@@ -60,34 +60,95 @@ const numPrice = document.querySelectorAll(".numPrice");
 const deleteIcon = document.querySelectorAll(".deleteIcon");
 const hidden = document.querySelector(".hidden");
 
+const totalSum = document.querySelector(".totalSum");
+
+const arr = [];
+let sum = 0;
+result2.forEach((item) => {
+  arr.push(Number(item.price));
+});
+for (let i = 0; i < arr.length; i++) {
+  sum += arr[i];
+}
+// console.log(sum.toFixed(2))
+totalSum.textContent = sum.toFixed(2);
+
+let val1 = 1;
+let unitPrice = 0;
+minus.forEach((item) => {
+  let Pprice = Number(
+    Array.from(item.parentElement.parentElement.lastElementChild.children)[0]
+      .textContent
+  );
+  item.addEventListener("click", () => {
+    if (Array.from(item.parentElement.children)[1].textContent > 1) {
+      Array.from(item.parentElement.children)[1].textContent -= 1;
+      Array.from(
+        item.parentElement.parentElement.lastElementChild.children
+      )[0].textContent = (
+        Number(
+          Array.from(
+            item.parentElement.parentElement.lastElementChild.children
+          )[0].textContent
+        ) - Pprice
+      ).toFixed(2);
+      totalSum.textContent = (Number(totalSum.textContent) - Pprice).toFixed(2);
+    } else {
+      Array.from(item.parentElement.children)[1].textContent = 1;
+    }
+  });
+});
+
+pilus.forEach((item) => {
+  let Pprice = Number(
+    Array.from(item.parentElement.parentElement.lastElementChild.children)[0]
+      .textContent
+  );
+  item.addEventListener("click", () => {
+    // console.log(Number(Array.from(item.parentElement.children)[1].textContent) = 1)
+    Array.from(item.parentElement.children)[1].textContent =
+      Number(Array.from(item.parentElement.children)[1].textContent) + 1;
+    totalSum.textContent = (Number(totalSum.textContent) + Pprice).toFixed(2);
+    Array.from(
+      item.parentElement.parentElement.lastElementChild.children
+    )[0].textContent = (
+      Number(
+        Array.from(
+          item.parentElement.parentElement.lastElementChild.children
+        )[0].textContent
+      ) + Pprice
+    ).toFixed(2);
+  });
+});
 deleteIcon.forEach((item) => {
   item.addEventListener("click", () => {
     const id = item.getAttribute("id");
     console.log(id);
     item.parentElement.parentElement.remove();
-    // localStorage.clear('object')
-    // console.log(data)
+    const data = localStorage.getItem("object") || [];
+
+    const result2 = JSON.parse(data);
+
     localStorage.setItem(
       "object",
       JSON.stringify(result2.filter((el) => el.id != id))
-      
     );
-    // console.log(el)
-    // console.log(localStorage.getItem('object'))
+
+    // console.log(Number(Array.from(Array.from(item.parentElement.parentElement.lastElementChild.children)[2].children)[0].textContent))
+    totalSum.textContent = (Number(totalSum.textContent) - Number(Array.from(Array.from(item.parentElement.parentElement.lastElementChild.children)[2].children)[0].textContent)).toFixed(2)
+
+
   });
 });
 
-// const arr = []
-// minus.forEach((item) => {
-//   const minusId = item.getAttribute('id')
-//   minusId.addEventListener('click', () => {
-//     console.log(minusId)
-//   })
-    
-  
-// })
+const buyNow = document.querySelector('.buyNow')
+// const korzinkaBox = document.querySelector('.korzinkaBox')
 
 
-
-  
-
+  // console.log(item)
+  buyNow.addEventListener('click', () => {
+    alert("haridingiz uchun rahmat")
+    localStorage.clear()
+    korzinkaBox.remove()
+    totalSum.textContent = 0
+  })
